@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProizvodController;
+use App\Http\Controllers\TransakcijaController;
 
 
 Route::get('/', function () {
@@ -61,5 +62,7 @@ Route::prefix('admin')->name('admin.')->middleware([AdminMiddleware::class])->gr
     Route::resource('proizvodi', ProizvodController::class)
     ->parameters(['proizvodi' => 'proizvod']); // <--- ovo rešava tvoj problem
 
-    // Ostale admin rute...
+    Route::resource('transakcije', TransakcijaController::class)
+     ->parameters(['transakcije' => 'transakcija']);
+
 });

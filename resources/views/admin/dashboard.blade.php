@@ -50,6 +50,16 @@
                     </div>
                 </a>
             </div>
+
+            <div class="col-md-4">
+                <a href="{{ route('admin.transakcije.index') }}" class="text-decoration-none">
+                    <div class="card text-center p-4 shadow-sm">
+                        <h4>Transakcije</h4>
+                        <p>Upravljanje transakcijama</p>
+                    </div>
+                </a>
+            </div>
+
         </div>
 
         <div class="mt-4 text-center">
