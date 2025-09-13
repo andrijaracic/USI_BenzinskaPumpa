@@ -13,6 +13,13 @@ class ProizvodController extends Controller
         return view('admin.proizvodi.index', compact('proizvodi'));
     }
 
+    public function userIndex()
+    {
+        $proizvodi = Proizvod::all();
+        $goriva = Proizvod::whereIn('id', [1, 2, 3, 4, 5])->get();
+        return view('dashboard', compact('proizvodi','goriva'));
+    }
+
     public function create()
     {
         return view('admin.proizvodi.create');

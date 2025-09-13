@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\DB;
 
 class TransakcijaController extends Controller
 {
+    
+    
     public function index()
     {
         $transakcije = Transakcija::with('user')->latest()->get();

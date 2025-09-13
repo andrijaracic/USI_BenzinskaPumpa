@@ -4,16 +4,20 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-mark class="block h-9 w-auto" />
-                    </a>
-                </div>
+                
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Pocetna') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('proizvodi.index') }}" :active="request()->routeIs('proizvodi.index')">
+                        {{ __('Proizvodi') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('transakcije.index') }}" :active="request()->routeIs('transakcije.index')">
+                        {{ __('Transakcije') }}
                     </x-nav-link>
                 </div>
 

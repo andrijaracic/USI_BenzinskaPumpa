@@ -5,6 +5,8 @@ use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProizvodController;
 use App\Http\Controllers\TransakcijaController;
+use App\Models\Proizvod;
+use App\Models\Transakcija;
 
 
 Route::get('/', function () {
@@ -16,10 +18,36 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
     Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+        $proizvodi = Proizvod::all();
+        $goriva = Proizvod::whereIn('id', [1, 2, 3, 4, 5])->get();
+        $proizvodiNaAkciji = Proizvod::where('na_akciji', true)->get();
+
+        // Dodaj transakcije i ukupne bodove
+        $transakcije = Transakcija::with('stavkaTransakcijas.proizvod', 'user')->get();
+
+        $ukupniBodovi = $transakcije->sum(function($t) {
+            $ukupnaCena = $t->stavkaTransakcijas->sum(function($stavka) {
+                return $stavka->kolicina * $stavka->proizvod->cena;
+            });
+            return floor($ukupnaCena / 1000) * 20;
+        });
+
+        return view('dashboard', compact('proizvodi', 'goriva', 'proizvodiNaAkciji', 'transakcije', 'ukupniBodovi'));
+    })->middleware(['auth', 'verified'])->name('dashboard');
+
 });
+
+Route::get('/proizvodi', function() {
+    $proizvodi = Proizvod::all();
+    return view('proizvodi.index', compact('proizvodi'));
+})->name('proizvodi.index');
+
+Route::get('/transakcije', function() {
+    $transakcije = Transakcija::all();
+    return view('transakcije.index', compact('transakcije'));
+})->name('transakcije.index');
 
 // Prikaz login forme
 Route::get('/admin/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
