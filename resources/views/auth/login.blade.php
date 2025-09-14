@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -41,11 +41,16 @@
                 <!-- Forgot password link -->
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900 mt-2" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                        {{ __('Zaboravili ste lozinku?') }}
                     </a>
                 @endif
 
-                <!-- Diskretno dugme za admin login -->
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="text-sm text-gray-500 hover:text-gray-700 mt-2">
+                        {{ __("Nemaš nalog? Registruj se") }}
+                    </a>
+                @endif
+                
                 <a href="{{ route('admin.login') }}" class="text-sm text-gray-500 hover:text-gray-700 mt-2">
                     {{ __('Prijavi se kao admin') }}
                 </a>
