@@ -5,7 +5,7 @@
                 "uuid": "4283bf69-ccca-426b-8416-bce71a6eb1c7",
                 "id": 1,
                 "createdAt": "2025-09-13 00:13:21",
-                "updatedAt": "2025-09-13 02:38:11",
+                "updatedAt": "2025-09-14 12:16:26",
                 "settings": {
                     "cssFramework": "tailwind",
                     "uiStarterKit": "jetstream",
@@ -14,7 +14,7 @@
                     "usesVue": false,
                     "usesReact": false,
                     "usesSvelte": false,
-                    "isFreshLaravelProject": true,
+                    "isFreshLaravelProject": false,
                     "blueprintModeEnabled": false,
                     "schemaReaderMode": "db",
                     "schemaReaderDbDriver": "mysql",
@@ -5851,13 +5851,13 @@
         "schema_sections": {
             "item_1": {
                 "name": "App",
-                "scrollX": 24064,
-                "scrollY": 24553.599609375,
-                "zoom": 50,
+                "scrollX": 24310.400390625,
+                "scrollY": 24559.19921875,
+                "zoom": 60,
                 "projectId": 1,
                 "id": 1,
                 "createdAt": "2025-09-13 00:13:27",
-                "updatedAt": "2025-09-13 00:17:46"
+                "updatedAt": "2025-09-14 12:17:15"
             },
             "__tableData": {
                 "count": 3,

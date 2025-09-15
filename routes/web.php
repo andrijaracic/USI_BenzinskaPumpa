@@ -7,6 +7,7 @@ use App\Http\Controllers\ProizvodController;
 use App\Http\Controllers\TransakcijaController;
 use App\Models\Proizvod;
 use App\Models\Transakcija;
+use App\Http\Controllers\RolaController;
 
 
 Route::get('/', function () {
@@ -92,5 +93,8 @@ Route::prefix('admin')->name('admin.')->middleware([AdminMiddleware::class])->gr
 
     Route::resource('transakcije', TransakcijaController::class)
      ->parameters(['transakcije' => 'transakcija']);
+
+     Route::resource('rola', RolaController::class);
+
 
 });

@@ -1,4 +1,3 @@
-{{-- resources/views/transakcije/index.blade.php --}}
 <!DOCTYPE html>
 <html lang="sr">
 <head>

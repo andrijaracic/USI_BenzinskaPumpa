@@ -32,8 +32,8 @@
         </div>
 
         <div class="row g-4">
-            <!-- Dugme ka korisnicima -->
-            <div class="col-md-4">
+            
+            <div class="col-md-3">
                 <a href="{{ route('admin.users.index') }}" class="text-decoration-none">
                     <div class="card text-center p-4 shadow-sm">
                         <h4>Korisnici</h4>
@@ -42,7 +42,7 @@
                 </a>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <a href="{{ route('admin.proizvodi.index') }}" class="text-decoration-none">
                     <div class="card text-center p-4 shadow-sm">
                         <h4>Proizvodi</h4>
@@ -51,11 +51,20 @@
                 </a>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <a href="{{ route('admin.transakcije.index') }}" class="text-decoration-none">
                     <div class="card text-center p-4 shadow-sm">
                         <h4>Transakcije</h4>
                         <p>Upravljanje transakcijama</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3">
+                <a href="{{ route('admin.rola.index') }}" class="text-decoration-none">
+                    <div class="card text-center p-4 shadow-sm">
+                        <h4>Role</h4>
+                        <p>Upravljanje <br> rolama</p>
                     </div>
                 </a>
             </div>
